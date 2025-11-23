@@ -1,0 +1,44 @@
+[versions]
+# plugin
+kotlin = "2.2.20"
+kotlinx-serialization = "2.2.0"
+shadow = "9.2.2"
+
+# library
+ktoml = "0.7.1"
+kord = "0.17.0"
+lavakord = "9.1.5"
+
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinx-serialization" }
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
+
+
+[libraries]
+ktomlCore = { module = "com.akuleshov7:ktoml-core", version.ref = "ktoml" }
+ktomlFile = { module = "com.akuleshov7:ktoml-file", version.ref = "ktoml" }
+kordCore = { module = "dev.kord:kord-core", version.ref = "kord"}
+kordCoreVoice = { module = "dev.kord:kord-core-voice", version.ref = "kord"}
+kordVoice = { module = "dev.kord:kord-voice", version.ref = "kord"}
+lavakordCore = { module = "dev.schlaubi.lavakord:core", version.ref = "lavakord" }
+lavakordKord = { module = "dev.schlaubi.lavakord:kord", version.ref = "lavakord" }
+lavakordLavasrc = { module = "dev.schlaubi.lavakord:lavasrc", version.ref = "lavakord" }
+
+
+[bundles]
+ktoml = [
+    "ktomlCore",
+    "ktomlFile"
+]
+kord = [
+    "kordCore",
+    "kordCoreVoice",
+    "kordVoice"
+]
+lavakord = [
+    "lavakordCore",
+    "lavakordKord",
+    "lavakordLavasrc"
+]
